@@ -1,6 +1,20 @@
 ActiveAdmin.register News do
   permit_params :published, :pubdate, :stick, :clicks, 
-  :title, :subtitle, :body, :category_ids
+  :title, :subtitle, :body, category_ids: []
+
+  index do
+    # selectable_column
+    id_column
+    column :published
+    column :stick
+    column :title
+    column :subtitle
+    column :clicks
+    column :pubdate
+    column :origin
+    column :updated_at
+    actions
+  end
 
   form do |f|
     f.inputs "发布信息" do
@@ -13,9 +27,6 @@ ActiveAdmin.register News do
 
     f.inputs "内容" do
       f.input :categories, label: "所属栏目", as: :check_boxes
-      # f.has_many :categories, heading: 'Themes', allow_destroy: false, new_record: false do |a|
-        # a.input :name
-      # end
       f.input :title, label: "标题"
       f.input :subtitle, label: "副标题"
 
