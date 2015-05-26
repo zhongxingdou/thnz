@@ -1,0 +1,208 @@
+﻿<%= render "prolist" %>
+
+<div id="about_main">
+    <div id="about_main_top">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="3%">
+                    &nbsp;
+                </td>
+                <td width="56%" class="aaas">
+                    在线反馈
+                </td>
+                <td width="41%" align="right">
+                    所在位置：首页&gt;&gt;在线反馈&nbsp;&nbsp;
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="main_body">
+        <form action="/send_feedback" method="post" name="Headers" id="Headers" onsubmit="return sendcheck();">
+        <table width="96%" border="0" cellpadding="0" cellspacing="0" align="center" style="margin: 0 auto;">
+            <tbody>
+                <tr>
+                    <td height="30" colspan="2" valign="center" class="text_1">
+                        <b>如对我们的产品有兴趣，可以填写下列的表格，寄给我们！</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="1" colspan="2" valign="bottom">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="14%" height="32" valign="middle">
+                        <span class="text_1">公司全称：</span>
+                    </td>
+                    <td width="86%" align="left" class="text_1">
+                        <input id="Company" size="30" name="company" />
+                        <font color="#ff0000">* </font>
+                    </td>
+                </tr>
+                <tr valign="middle">
+                    <td height="1" colspan="2">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="32" valign="middle">
+                        <span class="text_1">公司地址： </span>
+                    </td>
+                    <td align="left" class="text_1">
+                        <font color="#ff0000">
+                            <input id="Company" size="30" name="address" />
+                        </font>
+                    </td>
+                </tr>
+                <tr valign="middle">
+                    <td height="1" colspan="2">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="32" valign="middle">
+                        <span class="text_1">您的姓名：</span>
+                    </td>
+                    <td align="left" class="text_1">
+                        <font color="#ff0000">
+                            <input id="UserName" size="30" name="username" />
+                            * </font>
+                    </td>
+                </tr>
+                <tr valign="middle">
+                    <td height="1" colspan="2">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="32" valign="middle">
+                        <span class="text_1">您的电话：</span>
+                    </td>
+                    <td align="left" class="text_1">
+                        <font color="#ff0000">
+                            <input id="Tel" name="tel" />
+                            * </font>
+                    </td>
+                </tr>
+                <tr valign="middle">
+                    <td height="1" colspan="2">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="32" valign="middle" class="text_1">
+                        您的传真：
+                    </td>
+                    <td align="left" class="text_1">
+                        <font color="#ff0000">
+                            <input name="fax" />
+                        </font>
+                    </td>
+                </tr>
+                <tr valign="middle">
+                    <td height="1" colspan="2">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="32" valign="middle">
+                        <span class="text_1">您的电邮：</span>
+                    </td>
+                    <td align="left" class="text_1">
+                        <font color="#ff0000">
+                            <input id="Email" name="email" />
+                            * </font>
+                    </td>
+                </tr>
+                <tr valign="middle">
+                    <td height="1" colspan="2">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="32" valign="middle">
+                        <span class="text_1">产品名称：</span>
+                    </td>
+                    <td align="left" class="text_1">
+                        <font color="#ff0000">
+                            <input name="product" />
+                        </font>
+                    </td>
+                </tr>
+                <tr valign="middle">
+                    <td height="1" colspan="2">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="130" valign="middle">
+                        <span class="text_1">详细说明：</span>
+                    </td>
+                    <td height="140" align="left" valign="middle" class="text_1">
+                        <font color="#ff0000">
+                            <textarea id="producttext" name="product_desc" rows="8" wrap="virtual" cols="40"></textarea>
+                        </font>
+                    </td>
+                </tr>
+                <tr valign="middle">
+                    <td height="1" colspan="2">
+                    </td>
+                </tr>
+                <tr>
+                    <td height="75" valign="middle" class="text_1">
+                        您的宝贵意见：<br />
+                        （可另附页）
+                        <br />
+                    </td>
+                    <td height="140" align="left" class="text_1">
+                        <textarea id="liuyan" name="advice" rows="8" wrap="virtual" cols="40"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" height="38">
+                        <table cellspacing="0" cellpadding="0" width="100%" align="center" border="0">
+                            <tbody>
+                                <tr>
+                                    <td width="148">
+                                        &nbsp;
+                                    </td>
+                                    <td width="401">
+                                        <div align="left">
+                                            <span class="text_1">
+                                                <input name="Submit" type="submit" class="input1" value="发送" />
+                                                &nbsp;&nbsp;&nbsp;
+                                                <input type="reset" value="重设" name="Submit2" />
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </form>
+    </div>
+</div>
+<script>
+var msg = "<%= flash[:message] %>";
+if(msg){
+    alert(msg);
+}
+function trim(s){
+    return s.replace(/(^\s*)|(\s*$)/g, "");
+}
+
+function sendCheck(){
+    var fields = ["UserName", "Email", "Company", "Tel"];
+    for(var i=0,l=fields.length; i<l; i++){
+        var f = document.getElementById(fields[i]);
+        if(trim(f.value) == ""){
+            alert("请填写必填项");
+            f.focus();
+            return false;
+        }
+        if(f.id == "Email"){
+            if(f.indexOf("@") == -1 || !/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(f.value)){
+                alert("请填写正确的邮箱格式");
+                return false;
+            }
+        }
+        f.value = trim(f.value);
+    }
+    return true;
+}
+</script>

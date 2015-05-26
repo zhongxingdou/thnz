@@ -1,0 +1,19 @@
+<div id="about_left" class="categories">
+    <div id="about_left2">
+        <h2>新闻类别</h2>
+
+        <div id="products_body">
+            <div id="pro_menu">
+                <ul>
+                <% NewsCategory.where.not(parent: nil).each do |cat| %>
+                <li><a href="/news/category/<%= cat.id%>"> <%= cat.name %></a> </li>
+                <% end %>
+                </ul>
+            </div>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+        </div>
+    </div>
+    <div>
+    <img src="http://pic.chukou1.com/0/0_2c35ed.jpg" /></div>
+</div>

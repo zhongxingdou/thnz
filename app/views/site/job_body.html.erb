@@ -1,0 +1,39 @@
+ <div class="hr-main-top">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td width="3%">
+                &nbsp;
+            </td>
+            <td width="56%" class="aaas">
+              人才招聘
+            </td>
+            <td width="41%" align="right">
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="job-detail">
+    <h3><%= @job.position %></h3> 
+
+    <h4>工作地点：</h4> 
+    <p>
+    <%= @job.work_loc %>
+    </p>
+
+    <h4>职能要求：</h4> 
+    <p>
+    <%= raw @job.requirements.gsub("\n", "<br>") %>
+    </p>
+
+    <h4>工作职责：</h4>
+    <p>
+        <%= raw @job.description.gsub("\n", "<br>") %>
+    </p>
+
+    <p class="mailto">诚挚欢迎您的应聘，请将个人简历发至<a href="mailto:hr@jingshunfood.com">hr@jingshunfood.com</a></p>
+
+    <div class="back">
+       <strong> <a href="javascript:history.back();" class="btn btn-mini">继续查看其他职位 --&gt;</a></strong>
+   </div>
+</div>

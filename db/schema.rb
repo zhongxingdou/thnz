@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150516055744) do
+ActiveRecord::Schema.define(version: 20150526093452) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,30 @@ ActiveRecord::Schema.define(version: 20150516055744) do
 
   add_index "admin_users_roles", ["admin_user_id", "role_id"], name: "index_admin_users_roles_on_admin_user_id_and_role_id", using: :btree
 
+  create_table "equipment", force: :cascade do |t|
+    t.string   "name"
+    t.string   "pic"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "jobs", force: :cascade do |t|
+    t.string   "position"
+    t.string   "work_loc"
+    t.text     "requirements"
+    t.text     "description"
+    t.date     "expired_date"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "labels", force: :cascade do |t|
+    t.string   "name"
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "news", force: :cascade do |t|
     t.boolean  "published"
     t.string   "title"
@@ -83,6 +107,25 @@ ActiveRecord::Schema.define(version: 20150516055744) do
   end
 
   add_index "news_categories", ["news_category_id"], name: "index_news_categories_on_news_category_id", using: :btree
+
+  create_table "prod_categories", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "order_no"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string   "name"
+    t.boolean  "show_in_home"
+    t.string   "pic"
+    t.integer  "prod_category_id"
+    t.text     "description"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "products", ["prod_category_id"], name: "index_products_on_prod_category_id", using: :btree
 
   create_table "rich_rich_files", force: :cascade do |t|
     t.datetime "created_at"
@@ -117,6 +160,7 @@ ActiveRecord::Schema.define(version: 20150516055744) do
   add_index "sort_news", ["news_id"], name: "index_sort_news_on_news_id", using: :btree
 
   add_foreign_key "news_categories", "news_categories"
+  add_foreign_key "products", "prod_categories"
   add_foreign_key "sort_news", "news"
   add_foreign_key "sort_news", "news_categories"
 end

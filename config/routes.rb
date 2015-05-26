@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
+  # resources :labels
+  # resources :products
+  # resources :prod_categories
+  # resources :jobs
+
   mount Rich::Engine => '/rich', :as => 'rich'
-  get 'welcome/index'
+
+  #get 'welcome/index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   
@@ -9,7 +15,30 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  # root 'welcome#index'
+
+
+  root :to => 'site#index'
+  
+  get "about" => "site#about"
+  get "equipment" => "site#equipment"
+  get "feedback" => "site#feedback"
+  get "contact" => "site#contact"
+
+  get "news" => "site#news"
+  get "news/:id" => "site#news_body"
+  get "news/category/:id" => "site#news_category"
+  get "news/category/news/:id" => "site#product_body"
+
+  get "products" => "site#products"
+  get "product/:id" => "site#product_body"
+  get "products/category/:id" => "site#product_category"
+  get "products/category/product/:id" => "site#product_body"
+
+  post "send_feedback" => "site#send_feedback"
+
+  get "jobs" => "site#jobs"
+  get "jobs/:id" => "site#job_body"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -57,6 +86,5 @@ Rails.application.routes.draw do
   #   namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+  #     #   end
 end

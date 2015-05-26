@@ -1,0 +1,32 @@
+<%#= render "prolist" %>
+
+<div id="about_main" class="equipment">
+    <div id="about_main_top">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="3%">
+                    &nbsp;
+                </td>
+                <td width="56%" class="aaas">
+                    生产设备
+                </td>
+                <td width="41%" align="right">
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="main_body2">
+        <% @equipments.each do |item| %>
+        <dl>
+            <dt>
+                <a href="<%= item.pic %>" target="_blank" title="查看大图">
+                    <img src="<%= item.pic %>" width="255" height="178" border="0" alt="生产设备" />
+                    <%= item.name %>
+                </a>
+            </dt>
+        </dl>
+        <% end %>
+        <div class="del_float">
+        </div>
+    </div>
+</div>

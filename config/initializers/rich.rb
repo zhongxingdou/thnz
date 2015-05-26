@@ -5,11 +5,11 @@ if Object.const_defined?("Rich")
     # == Backend configuration
     # Rich uses Paperclip (https://github.com/thoughtbot/paperclip) by default.
     # You will need to add it to your Gemfile, however.
-    # config.backend = :paperclip
+    config.backend = :paperclip
     #
     # Optionally, you can use CarrierWave (https://github.com/carrierwaveuploader/carrierwave).
     # You will need to add it to your Gemfile.
-    config.backend = :carrierwave
+    # config.backend = :carrierwave
     
     # == CKEditor configuration
     # 
@@ -24,7 +24,7 @@ if Object.const_defined?("Rich")
     # you are editing. To disable this:
     #   config.editor[:startupOutlineBlocks] = false
     # config.editor[:format_tags] = ""
-    config.editor[:language] = "zh-cn"
+    # config.editor[:language] = "zh-cn"
     # config.editor[:skin] = "BootstrapCK"
 
     
@@ -39,7 +39,10 @@ if Object.const_defined?("Rich")
     # remember to re-generate your styles by running:
     #   rake rich:refresh_assets
     config.image_styles = {
-      :thumb => "100x100#"
+      :thumb => "100x100#",
+      :product_thumb => "140x105#",
+      :product_mini => "200x150#",
+      :equipment => "255x178#"
     }
 
     # == Convert options

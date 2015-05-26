@@ -1,0 +1,28 @@
+﻿    <%#= render "prolist" %>
+
+    <div id="about_main">
+        <div id="about_main_top">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="3%">
+                        &nbsp;
+                    </td>
+                    <td width="56%" class="aaas">
+                      公司简介
+                    </td>
+                    <td width="41%" align="right">
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="main_body">
+            <p style="float: right; margin-left: 5px;">
+                <img src="<%= content("公司介绍图片地址") %>" alt="" /></p>
+            <p>
+                <%= content("公司介绍") %>
+            </p>
+            <div class="del_float">
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,37 @@
+ <div class="hr-main-top">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td width="3%">
+                &nbsp;
+            </td>
+            <td width="56%" class="aaas">
+              人才招聘
+            </td>
+            <td width="41%" align="right">
+            </td>
+        </tr>
+    </table>
+</div>
+
+<table cellpadding="0" cellspacing="0" class="jobs-table">
+    <thead>
+        <tr>
+            <th width="35%">职位名称</th>
+            <th width="25%">工作地点</th>
+            <th width="15%">发布日期</th>
+            <th width="15%">截止日期</th>
+            <th width="10%"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @jobs.each do |job| %>
+        <tr>
+            <th><a href="jobs/<%=job.id%>"><%=job.position %></a></th>
+            <td><%=job.work_loc %></td>
+            <td><%=job.updated_at.strftime("%Y-%-m-%-d") %></td>
+            <td><%=job.expired_date %></td>
+            <td><a href="jobs/<%=job.id%>">查看</a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>

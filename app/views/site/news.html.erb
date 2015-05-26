@@ -1,0 +1,30 @@
+﻿<%= render "news_category" %>
+
+<div id="about_main">
+    <div id="about_main_top">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+         <tr>
+            <td width="3%">
+                &nbsp;
+            </td>
+            <td width="56%" class="aaas">
+                新闻中心
+            </td>
+            <td width="41%" align="right">
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div id="main_body">
+    <ul>
+        <% @news.each do |n|  %>
+        <li><span><%= n.pubdate.strftime("%Y-%-m-%-d") %></span><a href="news/<%=n.id %>"><%= n.title %></a></li>
+        <% end %>
+    </ul>
+    <div class="font_link">
+    </div>
+    <div class="del_float">
+    </div>
+</div>
+</div>

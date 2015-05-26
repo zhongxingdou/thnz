@@ -1,0 +1,35 @@
+﻿<%= render "news_category" %>
+
+<div id="about_main">
+    <div id="about_main_top">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="3%">
+                    &nbsp;
+                </td>
+                <td width="56%" class="aaas">
+                    新闻中心
+                </td>
+                <td width="41%" align="right">
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <div id="main_body">
+        <h4><%= @news.title%></h4>
+
+        <div style="height: 25px; background: #dfeffe; line-height: 25px; text-align: right;">
+            发布时间：<%= @news.pubdate.strftime("%Y-%-m-%-d %H-%-M") %>&nbsp;</div>
+
+        <%= raw @news.body %>
+
+        <p> &nbsp;</p>
+
+        <p class="mz2">
+            <a href="/news">
+                <img src="http://pic.chukou1.com/0/0_be3ee4.jpg" width="62" height="21" border="0" />
+            </a>
+        </p>
+    </div>
+</div>

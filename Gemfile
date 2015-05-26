@@ -1,4 +1,4 @@
-source 'https://ruby.taobao.org'
+source 'http://ruby.taobao.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -50,6 +50,7 @@ gem 'cancan'
 gem 'rolify'
 
 gem 'activeadmin', github: 'activeadmin'
+#gem 'activeadmin'
 
 gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 

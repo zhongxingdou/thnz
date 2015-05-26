@@ -4,7 +4,7 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "泰和农业资讯网"
+  config.site_title = "北京京顺食品有限公司"
   
   config.authorization_adapter = ActiveAdmin::CanCanAdapter
 

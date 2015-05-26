@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8" >
+    <title><%= @title %></title>
+    <%= stylesheet_link_tag  'site', media: 'all', 'data-turbolinks-track' => true %>
+    <style type="text/css">
+        body,td,th {
+            font-size: 12px;
+        }
+    </style>
+    <%= javascript_include_tag 'site', 'data-turbolinks-track' => true %>
+</head>
+<body>
+    <div id="top">
+        <img src="<%= content("logo地址") %>"  />
+    </div>
+
+    <%= render "menu" %>
+
+    <div id="top_img"></div>
+
+    <div id="banner">
+        <script>
+            var focus_width = 970;
+            var focus_height = 303;
+            var pics = "<%= content("主幻灯图片地址").gsub(/(\n|\r|\s)(\n|\r\s)/, '|') %>";
+            var links = '';
+            document.write('<embed src="/slide/pixviewer.swf" wmode="opaque" FlashVars="pics=' + pics + '&links=' + links + '&borderwidth=' + (focus_width + 2) + '&borderheight=' + (focus_height + 2) + '" menu="false" bgcolor="#FFFFFF" quality="high" width="' + focus_width + '" height="' + focus_height + '" >'); document.write('</object>');
+        </script>
+    </div>
+
+    <div id="body">
+        <%= yield %>
+        <div class="del_float"></div>
+    </div>
+
+    <%= render "footer" %>
+</body>
+</html>
