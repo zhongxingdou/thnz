@@ -5,7 +5,8 @@
         <div id="products_body">
             <div id="pro_menu">
                 <ul>
-                <% NewsCategory.where.not(parent: nil).each do |cat| %>
+                <%# NewsCategory.where.not(parent: nil).each do |cat| %>
+                <% NewsCategory.all.each do |cat| %>
                 <li><a href="/news/category/<%= cat.id%>"> <%= cat.name %></a> </li>
                 <% end %>
                 </ul>
