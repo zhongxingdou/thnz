@@ -18,10 +18,11 @@
 
         <div id="main_body">
             <p style="float: right; margin-left: 5px;">
-                <img src="<%= content("公司介绍图片地址") %>" alt="" /></p>
-            <p>
-                <%= content("公司介绍") %>
+                <img src="<%= content("公司介绍图片地址") %>" alt="" />
             </p>
+            <div>
+                <%= raw content("公司介绍") %>
+            </div>
             <div class="del_float">
             </div>
         </div>
