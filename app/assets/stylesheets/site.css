@@ -187,6 +187,7 @@ padding-left:10px;clear:both; background:url(img3.jpg) no-repeat 0 7px;
 
 .job-detail p{
     margin: 10px 0;
+    margin-left: 20px;
 }
 .job-detail h4{
     margin-top: 20px;
@@ -210,6 +211,7 @@ padding-left:10px;clear:both; background:url(img3.jpg) no-repeat 0 7px;
     padding-left: 24px;
 }
 
-p{
+.corp-intro p{
+    margin: 10px 0;
     line-height: 1.5em;
 }
