@@ -26,7 +26,7 @@
             var focus_height = 303;
             var pics = "<%= content("主幻灯图片地址").gsub(/(\n|\r|\s)(\n|\r\s)/, '|') %>";
             var links = '';
-            document.write('<embed src="/slide/pixviewer.swf" wmode="opaque" FlashVars="pics=' + pics + '&links=' + links + '&borderwidth=' + (focus_width + 2) + '&borderheight=' + (focus_height + 2) + '" menu="false" bgcolor="#FFFFFF" quality="high" width="' + focus_width + '" height="' + focus_height + '" >'); document.write('</object>');
+            document.write('<embed src="/assets/pixviewer.swf" wmode="opaque" FlashVars="pics=' + pics + '&links=' + links + '&borderwidth=' + (focus_width + 2) + '&borderheight=' + (focus_height + 2) + '" menu="false" bgcolor="#FFFFFF" quality="high" width="' + focus_width + '" height="' + focus_height + '" >'); document.write('</object>');
         </script>
     </div>
 
