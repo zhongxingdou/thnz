@@ -59,5 +59,7 @@ gem 'rich', :git => 'https://github.com/kreativgebiet/rich.git'
 gem 'paperclip'
 
 gem 'carrierwave'
+gem 'carrierwave-qiniu'
+gem 'qiniu-rs'
 
 gem 'mini_magick'
