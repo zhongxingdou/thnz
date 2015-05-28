@@ -12,7 +12,7 @@
 <div id="con" class="area">
   <ul class="list">
     <% @products.each do |pro| %>
-    <li class="item"><a href="product/<%=pro.id %>"> <img class="pic" src="<%=pro.pic.sub(/original|thumb/, "mini") %>" /></a>
+    <li class="item"><a href="product/<%=pro.id %>"> <img class="pic" src="<%=pro.pic.sub(/original|thumb|prod_list|equipment/, "prod_home") %>" /></a>
      <p><a href="products/<%=pro.id %>"><%=pro.name %></a></p>  
     </li>
     <% end %>

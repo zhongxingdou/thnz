@@ -40,8 +40,8 @@ if Object.const_defined?("Rich")
     #   rake rich:refresh_assets
     config.image_styles = {
       :thumb => "100x100#",
-      :product_thumb => "140x105#",
-      :product_mini => "200x150#",
+      :prod_home => "140x105#",
+      :prod_list => "200x150#",
       :equipment => "255x178#"
     }
 

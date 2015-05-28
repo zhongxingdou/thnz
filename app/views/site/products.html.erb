@@ -14,7 +14,7 @@
     <% @products.each do |p| %>
     <dl>
        <dt><a href="product/<%=p.id %>">
-          <img src="<%=p.pic.sub(/original|mini/, "thumb") %>" width="200" height="150" border="0"/></a></dt>
+          <img src="<%=p.pic.sub(/original|thumb|prod_home|equipment/, "prod_list") %>" width="200" height="150" border="0"/></a></dt>
        <dd><a href="/product/<%= p.id %>"><%=p.name %></a></dd>
    </dl>
    <% end %>
