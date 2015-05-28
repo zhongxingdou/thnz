@@ -5,7 +5,7 @@ if Object.const_defined?("Rich")
     # == Backend configuration
     # Rich uses Paperclip (https://github.com/thoughtbot/paperclip) by default.
     # You will need to add it to your Gemfile, however.
-    config.backend = :paperclip
+    # config.backend = :paperclip
     #
     # Optionally, you can use CarrierWave (https://github.com/carrierwaveuploader/carrierwave).
     # You will need to add it to your Gemfile.
