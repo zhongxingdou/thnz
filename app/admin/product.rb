@@ -6,7 +6,7 @@ ActiveAdmin.register Product do
             f.input :category, label: "产品分类"
             f.input :name, label: "产品名称"
             f.input :show_in_home, label: "在Home页显示"
-            f.input :pic, label: "主图片"
+            f.input :pic, label: "主图片", :as => :rich_picker, :config => {:hidden_input => true, :allowed_styles => [:prod_list]}
             f.input :description, label: "产品详情", :as => :rich, 
                 :config => {
                     width:'79%',
