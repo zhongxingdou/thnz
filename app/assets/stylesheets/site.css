@@ -13,6 +13,8 @@ a:visited{color:#08c;text-decoration: none;}
 a:active{color:#005080;text-decoration: none;}
 a:hover {text-decoration: none;color: #005080;}
 img{vertical-align:top;}
+p{line-height: 1.5em;}
+
 
 #top{ width:970px; height:103px; margin:auto; background:url(to_bg.jpg) no-repeat; margin-top: 20px;}
 
